@@ -1,4 +1,4 @@
-resource "aws_instance" "minecraft_instance" {
+/*resource "aws_instance" "minecraft_instance" {
   ami           = "ami-073636b61345c967f" # Amazon Linux 2 AMI
   instance_type = "t4g.medium"
   security_groups = [aws_security_group.minecraft_sg.name]
@@ -16,4 +16,4 @@ resource "aws_volume_attachment" "minecraft_attachment" {
   device_name = "/dev/xvdf" # Device name for mounting
   volume_id   = aws_ebs_volume.minecraft_volume.id
   instance_id = aws_instance.minecraft_instance.id
-}
+}*/

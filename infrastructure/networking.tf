@@ -1,4 +1,4 @@
-resource "aws_eip" "minecraft_eip" {
+/*resource "aws_eip" "minecraft_eip" {
   instance = aws_instance.minecraft_instance.id
 }
 
@@ -37,4 +37,4 @@ resource "aws_security_group" "minecraft_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
+}*/
