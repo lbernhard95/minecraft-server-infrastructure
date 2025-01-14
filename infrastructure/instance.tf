@@ -7,7 +7,7 @@ resource "aws_instance" "minecraft_instance" {
 }
 
 resource "aws_ebs_volume" "minecraft_volume" {
-  availability_zone = "eu-central-1a" # Match your instance's AZ
+  availability_zone = aws_instance.minecraft_instance.availability_zone
   size              = 10           # 10GB storage
 }
 
