@@ -15,12 +15,6 @@ resource "aws_instance" "minecraft_instance" {
     Name = "MinecraftServer"
   }
 
-  # Attach the EBS Volume
-  root_block_device {
-    volume_type = "gp2"
-    volume_size = 8
-  }
-
   ebs_block_device {
     device_name           = "/dev/xvdf"
     volume_id             = aws_ebs_volume.minecraft_volume.id
