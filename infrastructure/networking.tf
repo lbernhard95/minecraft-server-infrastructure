@@ -2,9 +2,12 @@ resource "aws_eip" "minecraft_eip" {
   instance = aws_instance.minecraft_instance.id
 }
 
+data "aws_route53_zone" "zone"{
+  name = var.route53_zone_id
+}
 resource "aws_route53_record" "minecraft_dns" {
-  zone_id = var.route53_zone_id
-  name    = "minecraft.lukas-bernhard.de"
+  zone_id = data.aws_route53_zone.zone.id
+  name    = "minecraft.${var.route53_zone_id}"
   type    = "A"
   ttl     = 300
   records = [aws_eip.minecraft_eip.public_ip]
