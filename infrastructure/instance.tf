@@ -1,5 +1,5 @@
 resource "aws_instance" "minecraft_instance" {
-  ami           = "ami-08c40ec9ead489470" # Amazon Linux 2 AMI
+  ami           = "ami-073636b61345c967f" # Amazon Linux 2 AMI
   instance_type = "t4g.medium"
   security_groups = [aws_security_group.minecraft_sg.name]
   key_name      = var.key_pair_name
